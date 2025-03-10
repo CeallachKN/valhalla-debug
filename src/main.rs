@@ -1,4 +1,4 @@
-use std::{collections::HashMap, num::NonZero, sync::Arc, time::Instant};
+use std::{collections::HashMap, env, num::NonZero, sync::Arc, time::Instant};
 
 use axum::{
     extract::{Path, State},
@@ -23,7 +23,7 @@ struct Config {
     #[arg(long, default_value_t = 4)]
     concurrency: u16,
     /// Mapbox access token to use in the frontend
-    //#[arg(long, env)]
+    #[arg(long, env)]
     maplibre_style_url: String,
     /// Valhalla base url to send requests to
     #[arg(long, default_value = "http://localhost:8002")]
